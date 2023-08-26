@@ -98,8 +98,7 @@ body {
   border-radius: 1rem;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to right top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
 }
 
 /* Navigation Bar */
@@ -110,12 +109,10 @@ body {
 }
 .nav.sticky {
   padding: 1em 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   z-index: 10;
 }
 .nav.sticky .nav__logo img {
@@ -200,12 +197,14 @@ body {
   background: var(--col-white);
 }
 .change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-0.64rem, 0.25rem);
   transform: rotate(-45deg) translate(-0.64rem, 0.25rem);
 }
 .change .bar2 {
   opacity: 0;
 }
 .change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-1rem, -0.6rem);
   transform: rotate(45deg) translate(-1rem, -0.6rem);
 }
 
@@ -301,8 +300,11 @@ body.dark .hero__dedication {
 #download__button {
   margin-bottom: 1.5rem;
 }
-#download__button > i {
+#download__button > svg {
   margin-right: 1rem;
+}
+#download__button:hover > svg > path {
+  fill: var(--col-primary);
 }
 
 /* Skills Section */
@@ -323,16 +325,8 @@ body.dark .hero__dedication {
 }
 
 .shadow {
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
-}
-
-@-webkit-keyframes pop {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes pop {
@@ -444,8 +438,6 @@ body.dark .hero__dedication {
   --padding: 1.5rem;
   padding: var(--padding);
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.9));
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   transition: transform 500ms ease-out;
 }
@@ -455,8 +447,6 @@ body.dark .hero__dedication {
   font-size: 1.3rem;
   margin-bottom: 1.3rem;
   position: relative;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 .project__title::after {
@@ -705,25 +695,9 @@ body.dark .hero__dedication {
 }
 
 .footer__social__link:hover::before {
-  -webkit-animation: social-effect 0.7s 1;
-          animation: social-effect 0.7s 1;
+  animation: social-effect 0.7s 1;
   top: -20%;
   left: -20%;
-}
-
-@-webkit-keyframes social-effect {
-  0% {
-    left: -110%;
-    top: 90%;
-  }
-  50% {
-    left: 5%;
-    top: -30%;
-  }
-  100% {
-    left: -20%;
-    top: -20%;
-  }
 }
 
 @keyframes social-effect {
@@ -937,8 +911,7 @@ body.dark .hero__dedication {
 }
 @media (prefers-reduced-motion: no-preference) {
   #Indicator {
-    -webkit-animation: pop 0.7s ease-in-out infinite forwards;
-            animation: pop 0.7s ease-in-out infinite forwards;
+    animation: pop 0.7s ease-in-out infinite forwards;
   }
   .project__card:hover .project__title::after {
     transform: scaleX(1);
