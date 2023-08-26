@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Variables */
+@import './General/variables';
+
+/* General Classes */
+@import './General/general';
+
+/* Navigation Bar */
+@import './Sections/navigation';
+
+/* Hamburger */
+@import './utilities/hamburger';
+
+/* toggle button */
+@import './utilities/toggle';
+
+/* Hero Section */
+@import './Sections/hero';
+
+/* Skills Section */
+@import './Sections/skills';
+
+/* Projects Section */
+@import './Sections/projects';
+
+/* Contact Me Section */
+@import './Sections/contactme';
+
+/* Footer */
+@import './Sections/footer';
+
+/* Media Queries */
+@import './General/mediaQueries';

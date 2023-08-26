@@ -1,0 +1,29 @@
+---
+import avatar from '../assets/images/logos/avatar.svg'
+import bridge from '../assets/images/bridge.svg'
+import { Icon } from 'astro-icon'
+
+---
+
+<header id="home">
+  <!-- Hero section -->
+  <div class="hero container">
+    <div class="hero__title">
+      <img width="222" height="236" class="avatar"
+        src={avatar} alt="avatar">
+      <div class="hero__greeting">
+        <h2>Hi!</h2>
+        <h1 class="hero__me">I'm Daniel.</h1>
+      </div>
+    </div>
+    <h2 class="hero__dedication">
+      <!-- <span class="message_development">SITE UNDER DEVELOPMENT</span><br> -->
+      a civil engineer and web developer.
+    </h2>
+    <a class="btn" id="download__button" href="/Daniel_Portillo_CV_Dev.pdf" download="Daniel_Portillo_CV_Dev"><Icon name="fa6-solid:file-pdf" />Download CV</a>
+    <img width="389" height="169" class="hero__image" src={bridge}
+      alt="bridge-img">
+
+
+  </div>
+</header>

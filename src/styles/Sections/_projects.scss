@@ -1,0 +1,216 @@
+$font-size-project: 1.5rem;
+
+#projects {
+
+    --clr-react: rgb(83, 193, 222);
+    --clr-sass: #c69;
+    --clr-html: #e34c26;
+    --clr-js: #f0db4f;
+    --clr-css: #264de4;
+    --clr-jQuery: #0769AD;
+    --clr-python: #4B8BBE;
+    --clr-mui: #00b0ff;
+
+
+    min-height: 100vh;
+    position: relative;
+    padding: 5em 0 15em;
+    background-color: var(--col-bg);
+
+    .projects__logo {
+        aspect-ratio: attr(width) / attr(height);
+        width: 40%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: -7%;
+        z-index: 0;
+        opacity: 0.75;
+    }
+}
+
+.projects--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 5rem;
+    z-index: 2;
+    place-items: center;
+}
+
+.project__card {
+    z-index: inherit;
+    background-size: cover;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-width: 320px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+
+    transition: transform 500ms ease;
+}
+
+.project__card--content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.4) 15%,
+            rgba(0, 0, 0, 0.9));
+    height: fit-content;
+    
+    transition: transform 500ms ease-out;
+
+}
+
+.project__title {
+    color: var(--col-white);
+    font-size: 1.3rem;
+    margin-bottom: 1.3rem;
+    position: relative;
+    width: max-content;
+
+    &::after {
+        content: '';
+        width: calc(100% + var(--padding));
+        height: 0.25rem;
+        background: linear-gradient(to right, var(--col-primary), var(--col-secondary));
+        position: absolute;
+        bottom: -0.75ch;
+        border-radius: 0 0.15rem 0.15rem 0;
+        left: calc(var(--padding) * -1);
+        transform-origin: left;
+
+        transition: transform 350ms ease-out 200ms;
+    }
+}
+
+.project__text {
+    color: rgba(255, 255, 255, 0.9);
+
+    & > a {
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            background-color: rgba(120, 120, 120 , $alpha: 0.7);
+        }
+    }
+}
+
+.project__tools {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 0;
+    flex-wrap: wrap;
+}
+
+.tool {
+    color: var(--col-white);
+    padding: 0.25em 0.75em;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+
+    &::before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 400;
+        margin-right: 0.5rem;
+        white-space: nowrap;
+    }
+}
+
+.react {
+    background-color: rgb(83, 193, 222);
+
+    &::before {
+        content: "\f41b";
+    }
+}
+
+.sass {
+    background-color: var(--clr-sass);
+
+    &::before {
+        content: "\f41e";
+    }
+}
+
+.html--class {
+    background-color: var(--clr-html);
+
+    &::before {
+        content: "\f13b";
+    }
+}
+
+.js--class {
+    background-color: var(--clr-js);
+
+    &::before {
+        content: "\f3b9";
+    }
+}
+
+.css--class {
+    background-color: var(--clr-css);
+
+    &::before {
+        content: "\f13c";
+    }
+}
+
+.jQuery {
+    background-color: var(--clr-jQuery);
+
+    &::before {
+        content: url("../images/jQuery.svg");
+        width: 0.75rem;
+        height: 0.75rem;
+        fill: var(--col-white);
+    }
+}
+
+.flask {
+    background-color: var(--clr-python);
+
+    &::before {
+        content: "\f3e2";
+    }
+}
+
+.mui {
+    background-color: var(--clr-mui);
+
+    &::before {
+        content: url("../images/material-ui.svg");
+        width: 0.75rem;
+        height: 0.75rem;
+        fill: var(--col-white);
+    }
+}
+
+.repository--div {
+    width: 100%;
+    margin-top: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.repository__button {
+    color: var(--col-white);
+    padding: 0.25em 0.75em;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+
+    transition: background-color 250ms ease;
+
+    &:hover {
+        background-color: rgba($color: #6F42FF, $alpha: 0.5);
+        border-radius: 0.25rem;
+    }
+
+    & > i {
+        margin-right: 0.5rem;
+    }
+}

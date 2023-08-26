@@ -1,0 +1,19 @@
+---
+import type { SkillCardProps } from "js/skill-cards/types";
+
+interface Props extends SkillCardProps {}
+
+const { skillImg, title, cardTexts, cardSkillImages } = Astro.props;
+---
+<article class="card card__skill">
+  <img width={skillImg.width} height={skillImg.height} src={ skillImg.image } alt={ skillImg.altText } class="card__img">
+  <h3 class="card__title">{ title }</h3>
+  {cardTexts.map(({ cardText, html }) => (
+    <p class="card__text">{ cardText } {html ? <a set:html={html}></a> : ''}</p>
+  ))}
+
+  <div class="card__skills_logos">
+    {cardSkillImages.map(({ width, height, image, altText }) => (
+      <img width={width} height={height} src={image} alt={altText} loading="lazy">
+    ))
+  </div>
